@@ -16,6 +16,9 @@
     </tr>
     <tr>
   </table>
+  <div id="like-btn<%= @item.id %>">
+    <%= render partial: "likes/like", locals: {item: @item} %>
+  </div>
   <% if user_signed_in? && current_user.id == @item.user_id%>
     <%= link_to '編集', edit_item_path(@item.id)%>
   <% end %>
